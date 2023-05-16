@@ -13,7 +13,9 @@ import {    StyleSheet,
 import { StatusBar } from 'expo-status-bar';
 import  React, { useState } from 'react';
 
-export default function Login() {
+export default function Login(setIsLogged) {
+
+  console.warn(setIsLogged)
 
 const [ matricula, setMatricula] = useState('')
 const [ senha, setSenha] = useState('')
@@ -62,6 +64,8 @@ input,{
 
 const acesso = ()=>{
 
+()=> setIsLogged(true)
+
 /* FAZER CHAMADA NO BACK-END PARA ACESSO */ 
 
 if(matricula == '123' && senha == '123'){
@@ -77,12 +81,12 @@ return (
 <View style={styles.container}>
 <StatusBar />
 <View style={{width: '100%', display: 'flex', alignItems:'center'}}>
-  <Animated.Image style={{opacity: escritaLogo, width: 200, height: 55}}  source={require('../assets/images/logoEscritoNL.png')}/>
+  <Animated.Image style={{opacity: escritaLogo, width: 200, height: 55}}  source={require('../assets/images/logoEscritoNLBlack.png')}/>
   <Animated.Image style={{width: larguraLogo , height: alturaLogo, marginVertical: 20}} source={require('../assets/images/logoNL.png')}/>
 </View>
 <Animated.View style={{width: '100%', display: 'flex', alignItems:'center', opacity: input}}>
-  <TextInput placeholder = "Matrícula" style={styles.textInput} onChangeText={text => setMatricula(text)}/>
-  <TextInput secureTextEntry={true} placeholder = "Senha" style={styles.textInput} onChangeText={text => setSenha(text)}/>
+  <TextInput placeholder = "Matrícula" placeholderTextColor={'#fefefe'} style={styles.textInput} onChangeText={text => setMatricula(text)}/>
+  <TextInput secureTextEntry={true} placeholder = "Senha" placeholderTextColor={'#fefefe'} style={styles.textInput} onChangeText={text => setSenha(text)}/>
     <Pressable style={styles.btnAcesso} onPress={()=>acesso()}>
       <Text style={styles.textBtnAcesso}>
         Acessar
@@ -99,16 +103,16 @@ container: {
 flex: 1,
 alignItems: 'center',
 justifyContent: 'space-evenly',
-backgroundColor: '#1C1C1C',
+backgroundColor: '#F0FFFF',
 padding: 20
 },
 textInput:{
 width: '80%',
 height: 40,
-backgroundColor: 'white',
+backgroundColor: '#4169E1',
 borderRadius:10,
 paddingLeft: 10,
-outline: 'none',
+// outline: '1px',
 marginVertical: 5  
 },
 btnAcesso:{

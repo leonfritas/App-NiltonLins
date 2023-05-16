@@ -12,10 +12,11 @@ export default function App() {
 
   const [isLogged, setIsLogged] = useState(false)
 
+
   return (
     <View style={styles.container}>
 
-        {isLogged?<TabsNavigator/>:<Login props={useState}/>}
+        {isLogged?<TabsNavigator/>:<Login props={setIsLogged}/>}
         <StatusBar style="auto" />
 
     </View>

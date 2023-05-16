@@ -1,11 +1,11 @@
 import { View, Text } from "react-native"
 
 
-export default function Cadastro(){
+export default function Horario(){
     return(
         <View>
             <Text>
-                Cadastro
+                Horario
             </Text>
         </View>
 
