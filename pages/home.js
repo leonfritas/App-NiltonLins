@@ -14,6 +14,7 @@ import {
     Touchable,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons'
+import App from '../App'
 
 export default function Home({ navigation }) {
     return (
@@ -41,7 +42,8 @@ export default function Home({ navigation }) {
                 <Text style={styles.txtBtn}>FINANCEIRO</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={[styles.btn, styles.shadowProp]}>
+            <TouchableOpacity style={[styles.btn, styles.shadowProp]} >
+
                 <Ionicons style={styles.icon} name='exit-outline' marginLeft={4} size={70} color='white'/>
             
                 <Text style={styles.txtBtn}>SAIR</Text>
