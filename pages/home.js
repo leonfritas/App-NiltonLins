@@ -16,33 +16,37 @@ import {
 import { Ionicons } from '@expo/vector-icons'
 import App from '../App'
 
+const deslogar = ()=>{
+    console.warn(props)
+}
+
 export default function Home({ navigation }) {
     return (
         <View style={styles.Home}>
 
-            <TouchableOpacity style={[styles.btn, styles.shadowProp]} title='Boletim' onPress={() => { navigation.navigate('Boletim') }}>
+            <TouchableOpacity style={[styles.btn, styles.shadowProp]} title='Boletim' onPress={() => { navigation.navigate('Boletim', {AssimPassoParametros: 'Através de objetos.'}) }}>
                 <Ionicons style={styles.icon} name='document-text-outline' size={80} color='white'/>
                 <Text style={styles.txtBtn}>BOLETIM</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={[styles.btn, styles.shadowProp]} title='Horário' onPress={() => { navigation.navigate('Horario') }}>
+            <TouchableOpacity style={[styles.btn, styles.shadowProp]} title='Horário' onPress={() => { navigation.navigate('Horario',  {AssimPassoParametros: 'Através de objetos.'}) }}>
                 <Ionicons style={styles.icon} name='md-time-outline' size={80} color='white'/>
            
                 <Text style={styles.txtBtn}>HORÁRIO</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={[styles.btn, styles.shadowProp]} title='Agenda' onPress={() => { navigation.navigate('Agenda') }}>
+            <TouchableOpacity style={[styles.btn, styles.shadowProp]} title='Agenda' onPress={() => { navigation.navigate('Agenda',  {AssimPassoParametros: 'Através de objetos.'} )}}>
                 <Ionicons style={styles.icon} name='book-outline' marginLeft={3} size={70} color='white'/>
                 <Text style={styles.txtBtn}>AGENDA</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={[styles.btn, styles.shadowProp]} title='Financeiro' onPress={() => { navigation.navigate('Financeiro') }}>
+            <TouchableOpacity style={[styles.btn, styles.shadowProp]} title='Financeiro' onPress={() => { navigation.navigate('Financeiro', {AssimPassoParametros: 'Através de objetos.'}) }}>
                 <Ionicons style={styles.icon} name='cash-outline' size={70} color='white'/>
             
                 <Text style={styles.txtBtn}>FINANCEIRO</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={[styles.btn, styles.shadowProp]} >
+            <TouchableOpacity style={[styles.btn, styles.shadowProp]} onPress={deslogar} >
 
                 <Ionicons style={styles.icon} name='exit-outline' marginLeft={4} size={70} color='white'/>
             
