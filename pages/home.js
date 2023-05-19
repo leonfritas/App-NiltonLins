@@ -1,26 +1,8 @@
-import {
-    StyleSheet,
-    Image,
-    Text,
-    View,
-    ScrollView,
-    SafeAreaView,
-    TouchableOpacity,
-    TextInput,
-    Animated,
-    Pressable,
-    useColorScheme,
-    Button,
-    Touchable,
-} from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons'
-import App from '../App'
-
-const deslogar = ()=>{
-    console.warn(props)
-}
 
 export default function Home({ navigation }) {
+
     return (
         <View style={styles.Home}>
 
@@ -46,19 +28,19 @@ export default function Home({ navigation }) {
                 <Text style={styles.txtBtn}>FINANCEIRO</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={[styles.btn, styles.shadowProp]} onPress={deslogar} >
+            <TouchableOpacity style={[styles.btn, styles.shadowProp]} onPress={()=>{navigation.goBack()}} >
 
                 <Ionicons style={styles.icon} name='exit-outline' marginLeft={4} size={70} color='white'/>
             
                 <Text style={styles.txtBtn}>SAIR</Text>
             </TouchableOpacity>
-            {/* )
-            })} */}
-            {/* <Button title='voltar'  /> */}
+
         </View>
 
     )
 }
+
+// export { deslogar }
 
 const styles = StyleSheet.create({
     Home: {

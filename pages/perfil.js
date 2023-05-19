@@ -1,13 +1,17 @@
-import { View, Text } from "react-native"
+import { View, Text, TouchableOpacity } from "react-native"
 
+const teste = 'oi'
 
-export default function Perfil(){
+export default function TabPerfil( ){
+
     return(
         <View>
-            <Text>
-                Perfil
-            </Text>
+               <TouchableOpacity  >
+                <Text>{teste}</Text>
+               </TouchableOpacity>
+            
         </View>
 
     )
 }
+
