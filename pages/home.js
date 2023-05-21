@@ -1,12 +1,30 @@
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons'
+import api from '../services/api';
+import React, { useState, useEffect } from 'react'
 
 export default function Home({ navigation }) {
+
+    const [ produtos, setProdutos ] = useState([])
+
+    useEffect(()=>{
+        api.get('/hep/student').then(({data})=>{
+                setProdutos(data)
+                console.warn(data)
+        });
+    }, [])
 
     return (
         <View style={styles.Home}>
 
-            <TouchableOpacity style={[styles.btn, styles.shadowProp]} title='Boletim' onPress={() => { navigation.navigate('Boletim', {AssimPassoParametros: 'Através de objetos.'}) }}>
+
+        {/* {produtos.map(item =>
+        (
+        //    console.warn(item)
+        ))} */}
+        
+
+            {/* <TouchableOpacity style={[styles.btn, styles.shadowProp]} title='Boletim' onPress={() => { navigation.navigate('Boletim', {AssimPassoParametros: 'Através de objetos.'}) }}>
                 <Ionicons style={styles.icon} name='document-text-outline' size={80} color='white'/>
                 <Text style={styles.txtBtn}>BOLETIM</Text>
             </TouchableOpacity>
@@ -33,7 +51,7 @@ export default function Home({ navigation }) {
                 <Ionicons style={styles.icon} name='exit-outline' marginLeft={4} size={70} color='white'/>
             
                 <Text style={styles.txtBtn}>SAIR</Text>
-            </TouchableOpacity>
+            </TouchableOpacity> */}
 
         </View>
 
